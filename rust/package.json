@@ -1,0 +1,43 @@
+{
+  "name": "@theia/rust",
+  "version": "0.3.10",
+  "description": "Theia - Rust Extension",
+  "license": "Apache-2.0",
+  "keywords": [
+    "theia-extension"
+  ],
+  "dependencies": {
+    "@theia/core": "latest",
+    "@theia/editor": "latest",
+    "@theia/languages": "latest",
+    "@theia/monaco": "latest"
+  },
+  "devDependencies": {
+    "rimraf": "latest",
+    "typescript": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theia-ide/theia-rust-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/theia-ide/theia-rust-extension/issues"
+  },
+  "homepage": "https://github.com/theia-ide/theia-rust-extension",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/rust-frontend-module",
+      "backend": "lib/node/rust-backend-module"
+    }
+  ]
+}
