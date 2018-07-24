@@ -8,12 +8,14 @@
 
 import { ContainerModule } from 'inversify';
 import { LanguageClientContribution } from '@theia/languages/lib/browser';
+import { LanguageGrammarDefinitionContribution } from '@theia/monaco/lib/browser/textmate';
 import { RustClientContribution } from './rust-client-contribution';
-
-import './monaco-contribution';
+import { RustGrammarContribution } from './rust-grammar-contribution';
 
 export default new ContainerModule(bind => {
     bind(RustClientContribution).toSelf().inSingletonScope();
     bind(LanguageClientContribution).toDynamicValue(ctx =>
         ctx.container.get(RustClientContribution)).inSingletonScope();
+    bind(LanguageGrammarDefinitionContribution).to(RustGrammarContribution)
+        .inSingletonScope();
 });
