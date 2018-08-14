@@ -26,7 +26,8 @@
   "homepage": "https://github.com/theia-ide/theia-rust-extension",
   "files": [
     "lib",
-    "src"
+    "src",
+    "data"
   ],
   "scripts": {
     "prepare": "yarn run clean && yarn run build",
