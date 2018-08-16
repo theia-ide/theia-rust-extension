@@ -6,6 +6,9 @@
   "keywords": [
     "theia-extension"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@theia/core": "next",
     "@theia/editor": "next",
