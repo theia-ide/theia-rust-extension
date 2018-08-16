@@ -1,4 +1,5 @@
 # Theia Rust Extension
+[![Build Status](https://travis-ci.org/theia-ide/theia-rust-extension.svg?branch=master)](https://travis-ci.org/theia-ide/theia-rust-extension)
 
 An extension for the Theia-IDE to support the Rust language, using the
 [Rust language server](https://github.com/rust-lang-nursery/rls).
