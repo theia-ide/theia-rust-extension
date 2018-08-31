@@ -8,6 +8,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es5",
+    "skipLibCheck": true,
     "lib": [
       "es6",
       "dom"

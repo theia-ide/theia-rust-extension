@@ -107,7 +107,7 @@ export class RustGrammarContribution implements LanguageGrammarDefinitionContrib
         monaco.languages.setLanguageConfiguration(RUST_LANGUAGE_ID, this.config)
 
         const rustGrammar = require('../../data/rust.tmLanguage.json')
-        registry.registerTextMateGrammarScope('source.rust', {
+        registry.registerTextmateGrammarScope('source.rust', {
             async getGrammarDefinition() {
                 return {
                     format: 'json',
