@@ -7,7 +7,6 @@
     "@theia/core": "next",
     "@theia/editor": "next",
     "@theia/editorconfig": "next",
-    "@theia/extension-manager": "next",
     "@theia/file-search": "next",
     "@theia/filesystem": "next",
     "@theia/git": "next",
@@ -37,9 +36,9 @@
     "@theia/cli": "next"
   },
   "scripts": {
-    "prepare": "theia build",
+    "prepare": "theia build --mode=development",
     "start": "theia start",
-    "watch": "theia build --watch"
+    "watch": "theia build --watch --mode=development"
   },
   "theia": {
     "target": "browser"

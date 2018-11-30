@@ -18,11 +18,12 @@ export class RustContribution extends BaseLanguageServerContribution {
     readonly name = RUST_LANGUAGE_NAME;
 
     start(clientConnection: IConnection): void {
-        const command = 'rls';
+        let command = process.env.RUST_LS_PATH || 'rls';
         const args: string[] = [];
         const serverConnection =
             this.createProcessStreamConnection(command, args);
         this.forward(clientConnection, serverConnection);
+        
     }
 
     protected onDidFailSpawnProcess(error: Error): void {

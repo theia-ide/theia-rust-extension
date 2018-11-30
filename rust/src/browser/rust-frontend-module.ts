@@ -11,8 +11,11 @@ import { LanguageClientContribution } from '@theia/languages/lib/browser';
 import { LanguageGrammarDefinitionContribution } from '@theia/monaco/lib/browser/textmate';
 import { RustClientContribution } from './rust-client-contribution';
 import { RustGrammarContribution } from './rust-grammar-contribution';
+import { bindRustPreferences } from './rust-preferences';
 
 export default new ContainerModule(bind => {
+    bindRustPreferences(bind);
+
     bind(RustClientContribution).toSelf().inSingletonScope();
     bind(LanguageClientContribution).toDynamicValue(ctx =>
         ctx.container.get(RustClientContribution)).inSingletonScope();

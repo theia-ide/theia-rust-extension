@@ -6,8 +6,10 @@
  * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
  */
 import { injectable } from 'inversify'
-import { LanguageGrammarDefinitionContribution, TextmateRegistry
-       } from '@theia/monaco/lib/browser/textmate'
+import {
+    LanguageGrammarDefinitionContribution, TextmateRegistry
+} from '@theia/monaco/lib/browser/textmate'
+import { TextmateSnippetCompletionProvider } from '@theia/monaco/lib/browser/textmate/textmate-snippet-completion-provider';
 import { RUST_LANGUAGE_ID, RUST_LANGUAGE_NAME } from '../common';
 
 @injectable()
@@ -117,5 +119,9 @@ export class RustGrammarContribution implements LanguageGrammarDefinitionContrib
         });
 
         registry.mapLanguageIdToTextmateGrammar(RUST_LANGUAGE_ID, 'source.rust');
+    }
+    protected registerSnippets() {
+        const snippets = require('../../snippets/rust.json');
+        monaco.languages.registerCompletionItemProvider(RUST_LANGUAGE_ID, new TextmateSnippetCompletionProvider(snippets, 'rs'));
     }
 }
