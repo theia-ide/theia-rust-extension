@@ -30,7 +30,8 @@
   "files": [
     "lib",
     "src",
-    "data"
+    "data",
+    "snippets"
   ],
   "scripts": {
     "prepare": "yarn run clean && yarn run build",
