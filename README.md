@@ -6,6 +6,13 @@ An extension for the Theia-IDE to support the Rust language, using the
 
 ## Getting started
 
+### Online Development
+
+Start a dev environment in your browser:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/theia-ide/theia-rust-extension)
+
+### Local Development
 Install [nvm](https://github.com/creationix/nvm#install-script).
 
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
